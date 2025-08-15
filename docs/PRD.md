@@ -12,7 +12,7 @@ A minimal Node.js REST API that accepts video uploads and returns horizontally f
 
 ### Input Specifications
 
-- **Video Duration**: Up to 10 seconds
+- **Video Duration**: Up to 20 seconds
 - **Video Resolution**: 720 × 1280 (portrait orientation)
 - **Supported Formats**: MP4 (primary), MOV, AVI
 - **File Size Limit**: 50MB maximum
