@@ -30,6 +30,47 @@ yarn start
 
 The API will run on `http://localhost:3000`
 
+## PM2 Deployment
+
+### Local PM2 Commands
+
+```bash
+# Start with PM2
+yarn pm2:start
+
+# Stop PM2 process
+yarn pm2:stop
+
+# Restart PM2 process
+yarn pm2:restart
+
+# Reload PM2 process (zero-downtime)
+yarn pm2:reload
+
+# Delete PM2 process
+yarn pm2:delete
+
+# View logs
+yarn pm2:logs
+
+# Monitor processes
+yarn pm2:monit
+```
+
+### Production Deployment
+
+1. Update `ecosystem.config.js` with your server details:
+
+   - Replace `YOUR_SERVER_IP` with your server IP
+   - Replace `YOUR_GITHUB_REPO_URL` with your GitHub repo URL
+
+2. Deploy to production:
+
+```bash
+pm2 deploy production setup
+pm2 deploy production
+```
+
 ## API Endpoints
 
 ### Health Check
@@ -67,8 +108,10 @@ curl -X POST -F "video=@your_video.mp4" http://localhost:3000/flip-video -o flip
 /
 ├── package.json
 ├── server.js
+├── ecosystem.config.js
 ├── README.md
+├── logs/ (auto-created by PM2)
 └── uploads/ (auto-created)
 ```
 
-That's it! Super simple video flip API.
+That's it! Super simple video flip API with PM2 deployment.
