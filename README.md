@@ -28,7 +28,7 @@ yarn install
 yarn start
 ```
 
-The API will run on `http://localhost:3000`
+The API will run on `http://localhost:3001`
 
 ## PM2 Deployment
 
@@ -99,7 +99,7 @@ Returns the flipped video file for download.
 Using curl:
 
 ```bash
-curl -X POST -F "video=@your_video.mp4" http://localhost:3000/flip-video -o flipped_video.mp4
+curl -X POST -F "video=@your_video.mp4" http://localhost:3001/flip-video -o flipped_video.mp4
 ```
 
 ## File Structure
