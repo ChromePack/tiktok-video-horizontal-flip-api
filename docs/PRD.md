@@ -2,7 +2,7 @@
 
 ## Overview
 
-A minimal Node.js REST API that accepts video uploads and returns horizontally flipped videos.
+A minimal Node.js REST API that accepts video uploads and returns horizontally flipped videos. **Super simple - just 2-3 files.**
 
 ## Functional Requirements
 
@@ -22,8 +22,8 @@ A minimal Node.js REST API that accepts video uploads and returns horizontally f
 
 - **Processing**: Horizontal flip (mirror effect)
 - **Format**: Same as input (preserve original format)
-- **Quality**: Maintain original quality
-- **Response**: Direct file download or file URL
+- **Quality**: Maintain original quality (no compression)
+- **Response**: Direct file download
 
 ## API Endpoints
 
@@ -54,11 +54,19 @@ A minimal Node.js REST API that accepts video uploads and returns horizontally f
 - Multer for file handling
 - fluent-ffmpeg for video processing
 
+### File Structure (Super Simple)
+
+```
+/
+├── package.json
+├── server.js
+└── README.md
+```
+
 ### Performance
 
 - **Processing Time**: < 30 seconds for 10s video
-- **Concurrent Requests**: Handle 5+ simultaneous uploads
-- **Memory Usage**: Efficient cleanup of temporary files
+- **Memory Usage**: Basic cleanup of temporary files
 
 ### Error Handling
 
@@ -71,21 +79,14 @@ A minimal Node.js REST API that accepts video uploads and returns horizontally f
 
 ### Reliability
 
-- Automatic cleanup of temporary files
-- Graceful error handling
+- Basic cleanup of temporary files
+- Simple error handling
 - Process timeout protection (60s max)
 
 ### Security
 
 - File type validation
 - Size limits enforced
-- Basic input sanitization
-
-### Deployment
-
-- Single server deployment
-- Environment variable configuration
-- Docker-ready (optional)
 
 ## Out of Scope (V1)
 
@@ -95,10 +96,16 @@ A minimal Node.js REST API that accepts video uploads and returns horizontally f
 - Advanced video effects
 - Progress tracking
 - Rate limiting
+- CORS
+- Docker
+- Compression
+- Complex folder structure
+- Middleware beyond basic file handling
+- Tests
 
 ## Success Metrics
 
 - Successfully flip 720×1280 portrait videos
 - Complete processing within timeout limits
 - Handle expected file formats without crashes
-- Clean resource usage (no memory leaks)
+- Basic resource cleanup
